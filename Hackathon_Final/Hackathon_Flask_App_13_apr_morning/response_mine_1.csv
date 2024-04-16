@@ -1,0 +1,7 @@
+Timestamp,Name,College_Email,MIS,Contact_Number,Branch,Year_of_Study,Event_Name,Event_Type,Event_Date,Capacity,Event_Time,Event_Duration,Venue_Selection,Additional_Equipment_required(if_any),Status,2nd_Choice
+09/04/2024 20:00:10,Atharva Sardesai,atharvasardesai82@gmail.com,612203013,9975431335,Computer Science,SY,Googler,Club/Fest event,12/04/2024,100,09:00:00,3,Cognizant Lab,Projector,Pending,FOSS                                         
+09/04/2024 20:04:44,MR.X,x@mail.com,612203012,9123432311,Electrical,TY,Fandom,Club/Fest event,13/04/2024,200,11:00:00,4,Seminar Hall 2,"By submitting this booking request, I confirm that I have read and agree to abide by the venue booking terms and conditions. I understand that this booking is subject to approval by the administration and availability of the selected venue(s).",Pending,Cognizant Lab
+09/04/2024 20:04,Arnav Prasad,arnav.prasad.ap@gmail.com,612203090,9378456210,Computer Science,SY,CodeJunkiee,Club/Fest event,11/04/2024,100,12:00:00,5,Main Auditorium,,Pending,Mini Auditorium
+09/04/2024 20:04,Aryan,aryan@gmail.com,612203012,9198765432,Entc,TY,basketball,Club/Fest event,12/04/2024,100,20:00:00,2,Mini Auditorium,,Pending,Seminar Hall 2
+09/04/24 20:00,Idirs,idris@gmail.com,612203100,9712309723,Electrical,SY,cricket,Club/Fest event,12/04/24,100,13:00:00,3,Cognizant Lab,,Pending,FOSS                                         
+09/04/24 20:00,Sanchit,sanchit@gmail.com,612203087,9128436392,Computer Science,FY,football,Club/Fest event,12/04/24,100,21:00:00,2,Mini Auditorium,,Pending,AC 201

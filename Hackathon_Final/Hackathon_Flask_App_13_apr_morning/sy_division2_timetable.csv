@@ -1,0 +1,36 @@
+day,start_time,end_time,subject,venue,teacher
+Monday,9,11,MPT,,Revankar
+Monday,11,12,,,
+Monday,12,13,Lunch Break,,
+Monday,13,14,DSA,203,Pratiksha
+Monday,14,15,TOC,201,Jibi
+Monday,15,16,DC,201,Kshirsagar
+Monday,16,17,MPT,203,Sawant
+Tuesday,9,11,,,
+Tuesday,11,12,TOC,201,Jibi
+Tuesday,12,13,Lunch Break,,
+Tuesday,13,14,RPPOOP,203,Trishna
+Tuesday,14,15,,,
+Tuesday,15,16,BFE,203,Bhagyashree
+Tuesday,16,17,VCPDE,201,Seema
+Wednesday,9,11,BFE,,M tech1
+Wednesday,11,12,SA,201,Sawant
+Wednesday,12,13,MPT,,
+Wednesday,13,14,,,
+Wednesday,14,15,,201,
+Wednesday,15,16,,201,
+Wednesday,16,17,DC,201,Kshirsagar
+Thursday,9,11,RPPOOP,,Trishna
+Thursday,11,12,MPT,203,Sawant
+Thursday,12,13,Lunch Break,,
+Thursday,13,14,TOC,203,Jibi
+Thursday,14,15,,,
+Thursday,15,16,VCPDE,201,Seema
+Thursday,16,17,,,
+Friday,9,11,DSA,,Pratiksha
+Friday,11,12,TOC,201,Jibi
+Friday,12,13,Lunch Break,,
+Friday,13,14,BFE,203,Bhagyashree
+Friday,14,15,VCPDE,201,Seema
+Friday,15,16,DC,201,Kshirsagar
+Friday,16,17,SA,201,Kokate

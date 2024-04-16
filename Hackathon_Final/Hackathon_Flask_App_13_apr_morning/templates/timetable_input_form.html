@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Timetable</title>
+</head>
+<body>
+    <div class="formbold-main-wrapper">
+        <!-- Author: FormBold Team -->
+        <!-- Learn More: https://formbold.com -->
+        <div class="formbold-form-wrapper">
+          <form action="/process_timetable_input_form" method="POST">
+            <div class="formbold-steps">
+                <ul>
+                    <li class="formbold-step-menu1 active">
+                        <span>1</span>
+                        Lectures
+                    </li>
+                    <li class="formbold-step-menu2">
+                        <span>2</span>
+                        Labs
+                    </li>
+                    <li class="formbold-step-menu3">
+                        <span>3</span>
+                        Confirm
+                    </li>
+                </ul>
+            </div>  
+
+            <div class="formbold-form-step-1 active">
+                <div class="formbold-input-flex" id="general1">
+                    <div>
+                        <label for="year" class="formbold-form-label">Year of Study:</label>
+                        <select name="year" id="year" class="formbold-form-input">
+                            <option value="FY">First Year (FY)</option>
+                            <option value="SY">Second Year (SY)</option>
+                            <option value="TY">Third Year (TY)</option>
+                            <option value="BTECH">B.Tech</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="formbold-input-flex" id="general1">
+                    <div>
+                        <label for="division" class="formbold-form-label">Year of Study:</label>
+                        <select name="division" id="year" class="formbold-form-input">
+                            <option value="1">Division 1</option>
+                            <option value="2">Divsion 2</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="formbold-input-flex" id="general3">
+                    <div>
+                        <label for="Subject" class="formbold-form-label"> Number of Thoery subjects: </label>
+                        <input
+                        type="number"
+                        name="num_subjects"
+                        id="Subject"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                </div>
+                <div class="formbold-input-flex" id="general4">
+                    <div>
+                        <label for="rooms" class="formbold-form-label"> Number of classrooms required:  </label>
+                        <input
+                        type="number"
+                        name="num_rooms"
+                        id="rooms"
+                        class="formbold-form-input"
+                        />
+                    </div>       
+                </div>
+    
+                <ul>
+                    <!--Sub1----------------------------------->
+                    <div class="formbold-input-flex" id="sub1">
+                        <div>
+                            <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                            <input
+                            type="text"
+                            name="Subject1"
+                            placeholder="Andrio"
+                            id="Subject"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty1" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                            <input
+                            type="text"
+                            name="faculty1.1"
+                            placeholder="Dolee"
+                            id="faculty1"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                            <input
+                            type="text"
+                            name="faculty1.2"
+                            placeholder="Dolee"
+                            id="faculty2"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                            <input
+                            type="text"
+                            name="faculty1.3"
+                            placeholder="Dolee"
+                            id="faculty3"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                            
+                        <div>
+                                <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                                <input 
+                                type="number" 
+                                name="credits1" 
+                                id="credits" 
+                                class="formbold-form-input"
+                                />
+                        </div>
+                        
+                    </div>
+
+                    <div class="formbold-input-flex" id="sub2">
+                    <!--Sub2----------------------------------->                   
+                        <div>
+                            <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                            <input
+                            type="text"
+                            name="Subject2"
+                            placeholder="Andrio"
+                            id="Subject"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty 1" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                            <input
+                            type="text"
+                            name="faculty2.1"
+                            placeholder="Dolee"
+                            id="faculty 1"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                            <input
+                            type="text"
+                            name="faculty2.2"
+                            placeholder="Dolee"
+                            id="faculty2"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                            <input
+                            type="text"
+                            name="faculty2.3"
+                            placeholder="Dolee"
+                            id="faculty3"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                            
+                        <div>
+                            <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                            <input 
+                            type="number" 
+                            name="credits2" 
+                            id="credits" 
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        
+                    </div>
+
+                    <div class="formbold-input-flex" id="sub3">
+                    <!--Sub3----------------------------------->
+                        <div>
+                            <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                            <input
+                            type="text"
+                            name="Subject3"
+                            placeholder="Andrio"
+                            id="Subject"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty 1" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                            <input
+                            type="text"
+                            name="faculty3.1"
+                            placeholder="Dolee"
+                            id="faculty 1"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                            <input
+                            type="text"
+                            name="faculty3.2"
+                            placeholder="Dolee"
+                            id="faculty2"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                            <input
+                            type="text"
+                            name="faculty3.3"
+                            placeholder="Dolee"
+                            id="faculty3"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                            
+                        <div>
+                            <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                            <input 
+                            type="number" 
+                            name="credits3" 
+                            id="credits" 
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        
+                    </div>
+
+                    <div class="formbold-input-flex" id="sub4">
+                        <!--Sub4----------------------------------->
+                        <div>
+                            <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                            <input
+                            type="text"
+                            name="Subject4"
+                            placeholder="Andrio"
+                            id="Subject"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                            <input
+                            type="text"
+                            name="faculty4.1"
+                            placeholder="Dolee"
+                            id="faculty 1"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                            <input
+                            type="text"
+                            name="faculty4.2"
+                            placeholder="Dolee"
+                            id="faculty2"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                            <input
+                            type="text"
+                            name="faculty4.3"
+                            placeholder="Dolee"
+                            id="faculty3"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        
+                            
+                        <div>
+                            <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                            <input 
+                            type="number" 
+                            name="credits4" 
+                            id="credits" 
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        
+                    </div>
+
+                    <div class="formbold-input-flex" id="sub5">
+                        <!--Sub5----------------------------------->
+                        <div>
+                            <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                            <input
+                            type="text"
+                            name="Subject5"
+                            placeholder="Andrio"
+                            id="Subject"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                            <input
+                            type="text"
+                            name="faculty5.1"
+                            placeholder="Dolee"
+                            id="faculty 1"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                            <input
+                            type="text"
+                            name="faculty5.2"
+                            placeholder="Dolee"
+                            id="faculty2"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                            <input
+                            type="text"
+                            name="faculty5.3"
+                            placeholder="Dolee"
+                            id="faculty3"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                            
+                        <div>
+                            <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                            <input 
+                            type="number" 
+                            name="credits5" 
+                            id="credits" 
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        
+                    </div>
+
+                    <div class="formbold-input-flex" id="sub6">
+                    <!--Sub6----------------------------------->
+                        <div>
+                            <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                            <input
+                            type="text"
+                            name="Subject6"
+                            placeholder="Andrio"
+                            id="Subject"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty 1" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                            <input
+                            type="text"
+                            name="faculty6.1"
+                            placeholder="Dolee"
+                            id="faculty 1"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty 2" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                            <input
+                            type="text"
+                            name="faculty6.2"
+                            placeholder="Dolee"
+                            id="faculty2"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                            <input
+                            type="text"
+                            name="faculty6.3"
+                            placeholder="Dolee"
+                            id="faculty3"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                            
+                        <div>
+                            <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                            <input 
+                            type="number" 
+                            name="credits6" 
+                            id="credits" 
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        
+                    </div>
+
+                    <div class="formbold-input-flex" id="sub7">
+                    <!--Sub7----------------------------------->
+                        <div>
+                            <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                            <input
+                            type="text"
+                            name="Subject7"
+                            placeholder="Andrio"
+                            id="Subject"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty 1" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                            <input
+                            type="text"
+                            name="faculty7.1"
+                            placeholder="Dolee"
+                            id="faculty 1"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty 2" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                            <input
+                            type="text"
+                            name="faculty7.2"
+                            placeholder="Dolee"
+                            id="faculty2"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                        <div>
+                            <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                            <input
+                            type="text"
+                            name="faculty7.3"
+                            placeholder="Dolee"
+                            id="faculty3"
+                            class="formbold-form-input"
+                            />
+                        </div>
+                            
+                        <div>
+                            <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                            <input 
+                            type="number" 
+                            name="credits7" 
+                            id="credits" 
+                            class="formbold-form-input"
+                            />
+                        </div>
+                    </ul>                
+                </div>
+        
+            <!------------------------------------------------------------------->   
+      
+            <div class="formbold-form-step-2">
+                <div class="formbold-input-flex" id="general1">
+                    <div>
+                        <label for="Subject" class="formbold-form-label"> Number of Lab subjects: </label>
+                        <input
+                        type="number"
+                        name="num_labs"
+                        placeholder="Andrio"
+                        id="Subject"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                </div>
+    
+                <!--Sub1----------------------------------->
+                <div class="formbold-input-flex" id="sub1">
+                    <div>
+                        <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                        <input
+                        type="text"
+                        name="lab1"
+                        placeholder="Andrio"
+                        id="Subject"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty 1" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty1.1"
+                        placeholder="Dolee"
+                        id="faculty 1"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty1.2"
+                        placeholder="Dolee"
+                        id="faculty2"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty1.3"
+                        placeholder="Dolee"
+                        id="faculty3"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                        
+                    <div>
+                        <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                            <input 
+                            type="number" 
+                            name="lab_credits1" 
+                            id="credits" 
+                            class="formbold-form-input"
+                            />    
+                    </div>
+                    <div>
+                        <label for="venue" class="formbold-form-label"> Lab Venue: </label>
+                            <input 
+                            type="text" 
+                            name="lab_venue1" 
+                            id="venue" 
+                            class="formbold-form-input"
+                            />    
+                    </div>
+                    
+                </div>
+
+                <div class="formbold-input-flex" id="sub2">
+                <!--Sub2----------------------------------->                   
+                    <div>
+                        <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                        <input
+                        type="text"
+                        name="lab2"
+                        placeholder="Andrio"
+                        id="Subject"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty 1" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty2.1"
+                        placeholder="Dolee"
+                        id="faculty 1"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty2.2"
+                        placeholder="Dolee"
+                        id="faculty2"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty2.3"
+                        placeholder="Dolee"
+                        id="faculty3"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                        
+                    <div>
+                        <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                        <input 
+                        type="number" 
+                        name="lab_credits2" 
+                        id="credits" 
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="venue" class="formbold-form-label"> Lab Venue: </label>
+                            <input 
+                            type="text" 
+                            name="lab_venue2" 
+                            id="venue" 
+                            class="formbold-form-input"
+                            />    
+                    </div>
+                    
+                </div>
+
+                <div class="formbold-input-flex" id="sub3">
+                <!--Sub3----------------------------------->
+                    <div>
+                        <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                        <input
+                        type="text"
+                        name="lab3"
+                        placeholder="Andrio"
+                        id="Subject"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty 1" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty3.1"
+                        placeholder="Dolee"
+                        id="faculty 1"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty3.2"
+                        placeholder="Dolee"
+                        id="faculty2"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty3.3"
+                        placeholder="Dolee"
+                        id="faculty3"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                        
+                    <div>
+                        <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                        <input 
+                        type="number" 
+                        name="lab_credits3" 
+                        id="credits" 
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="venue" class="formbold-form-label"> Lab Venue: </label>
+                            <input 
+                            type="text" 
+                            name="lab_venue3" 
+                            id="venue" 
+                            class="formbold-form-input"
+                            />    
+                    </div>
+                    
+                </div>
+
+                <div class="formbold-input-flex" id="sub4">
+                    <!--Sub4----------------------------------->
+                    <div>
+                        <label for="Subject" class="formbold-form-label"> Subject Name: </label>
+                        <input
+                        type="text"
+                        name="lab4"
+                        placeholder="Andrio"
+                        id="Subject"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty 1" class="formbold-form-label"> Faculty Incharge 1:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty4.1"
+                        placeholder="Dolee"
+                        id="faculty 1"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty" class="formbold-form-label"> Faculty Incharge 2:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty4.2"
+                        placeholder="Dolee"
+                        id="faculty2"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="faculty" class="formbold-form-label"> Faculty Incharge 3:  </label>
+                        <input
+                        type="text"
+                        name="lab_faculty4.3"
+                        placeholder="Dolee"
+                        id="faculty3"
+                        class="formbold-form-input"
+                        />
+                    </div>
+                        
+                    <div>
+                        <label for="credits" class="formbold-form-label"> Credits Alloted: </label>
+                        <input 
+                        type="number" 
+                        name="lab_credits4" 
+                        id="credits" 
+                        class="formbold-form-input"
+                        />
+                    </div>
+                    <div>
+                        <label for="venue" class="formbold-form-label"> Lab Venue: </label>
+                            <input 
+                            type="text" 
+                            name="lab_venue4" 
+                            id="venue" 
+                            class="formbold-form-input"
+                            />    
+                    </div>
+
+                    
+                    
+                </div>
+            </div>
+
+
+            <div class="formbold-form-step-3">
+                <div class="formbold-form-confirm">
+                  <p>
+                    Submit Your Form to confirm your application.
+                  </p>
+                </div>
+              </div>
+      
+              <div class="formbold-form-btn-wrapper">
+                <button class="formbold-back-btn">
+                  Back
+                </button>
+      
+                <button type="submit" class="formbold-btn">
+                    Next Step
+                </button>
+              </div>
+          </form>
+        </div>
+      </div>
+
+      <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * {
+        margin-right: 25px;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: "Inter", sans-serif;
+        /* background-image:url("{{ url_for('static', filename='webpage_bg.png') }}"); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        }
+        .formbold-main-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+        }
+
+        .formbold-form-wrapper {
+        margin: 0 auto;
+        max-width: 550px;
+        width: 100%;
+        background: white;
+        }
+
+        .formbold-steps {
+        padding-bottom: 18px;
+        margin-bottom: 35px;
+        border-bottom: 1px solid #DDE3EC;
+        }
+        .formbold-steps ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        gap: 40px;
+        }
+        .formbold-steps li {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #536387;
+        }
+        .formbold-steps li span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #DDE3EC;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #536387;
+        }
+
+        .numbering{
+            
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 36px; /* Adjust line-height for vertical centering */
+            background: #6A64F1;
+            color: #FFFFFF; 
+        }
+        .formbold-steps li.active {
+        color: #07074D;;
+        }
+        .formbold-steps li.active span {
+        background: #6A64F1;
+        color: #FFFFFF;
+        }
+
+        .formbold-input-flex {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 22px;
+        }
+        .formbold-input-flex > div {
+        width: 50%;
+        }
+        .formbold-form-input {
+        padding: 13px 22px;
+        border-radius: 5px;
+        border: 1px solid #6A64F1;;
+        background: #FFFFFF;
+        font-weight: 500;
+        font-size: 16px;
+        color: #536387;
+        outline: none;
+        resize: none;
+        }
+        .formbold-form-input:focus {
+        border-color: #6a64f1;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+        }
+        .formbold-form-label {
+        color: #07074D;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        display: block;
+        margin-bottom: 10px;
+        }
+
+        .formbold-form-confirm {
+        border-bottom: 1px solid #DDE3EC;
+        padding-bottom: 35px;
+        }
+        .formbold-form-confirm p {
+        font-size: 16px;
+        line-height: 24px;
+        color: #536387;
+        margin-bottom: 22px;
+        width: 75%;
+        }
+        .formbold-form-confirm > div {
+        display: flex;
+        gap: 15px;
+        }
+
+        .formbold-confirm-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #FFFFFF;
+        border: 0.5px solid #DDE3EC;
+        border-radius: 5px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #536387;
+        cursor: pointer;
+        padding: 10px 20px;
+        transition: all .3s ease-in-out;
+        }
+        .formbold-confirm-btn {
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
+        }
+        .formbold-confirm-btn.active {
+        background: #6A64F1;
+        color: #FFFFFF;
+        }
+
+        .formbold-form-step-1,
+        .formbold-form-step-2,
+        .formbold-form-step-3 {
+        display: none;
+        }
+        .formbold-form-step-1.active,
+        .formbold-form-step-2.active,
+        .formbold-form-step-3.active {
+        display: block;
+        }
+
+        .formbold-form-btn-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 25px;
+        margin-top: 25px;
+        }
+        .formbold-back-btn {
+        cursor: pointer;
+        background: #FFFFFF;
+        border: none;
+        color: #07074D;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        display: none;
+        }
+        .formbold-back-btn.active {
+        display: block;
+        }
+        .formbold-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 10px 25px;
+        border: none;
+        font-weight: 500;
+        background-color: #6A64F1;
+        color: white;
+        cursor: pointer;
+        margin-right: 5px;
+
+        }
+
+        .formbold-btn:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+        }
+
+
+      </style>
+      <script>
+
+        const stepMenuOne = document.querySelector('.formbold-step-menu1')
+        const stepMenuTwo = document.querySelector('.formbold-step-menu2')
+        const stepMenuThree = document.querySelector('.formbold-step-menu3')
+
+        const stepOne = document.querySelector('.formbold-form-step-1')
+        const stepTwo = document.querySelector('.formbold-form-step-2')
+        const stepThree = document.querySelector('.formbold-form-step-3')
+
+        const formSubmitBtn = document.querySelector('.formbold-btn')
+        const formBackBtn = document.querySelector('.formbold-back-btn')
+
+        formSubmitBtn.addEventListener("click", function(event){
+        event.preventDefault()
+        if(stepMenuOne.className == 'formbold-step-menu1 active') {
+            event.preventDefault()
+
+            stepMenuOne.classList.remove('active')
+            stepMenuTwo.classList.add('active')
+
+            stepOne.classList.remove('active')
+            stepTwo.classList.add('active')
+
+            formBackBtn.classList.add('active')
+            formBackBtn.addEventListener("click", function (event) {
+                event.preventDefault()
+
+                stepMenuOne.classList.add('active')
+                stepMenuTwo.classList.remove('active')
+
+                stepOne.classList.add('active')
+                stepTwo.classList.remove('active')
+
+                formBackBtn.classList.remove('active')
+
+            })
+
+            } else if(stepMenuTwo.className == 'formbold-step-menu2 active') {
+            event.preventDefault()
+
+            stepMenuTwo.classList.remove('active')
+            stepMenuThree.classList.add('active')
+
+            stepTwo.classList.remove('active')
+            stepThree.classList.add('active')
+
+            formBackBtn.classList.remove('active')
+            formSubmitBtn.textContent = 'Submit'
+            } else if(stepMenuThree.className == 'formbold-step-menu3 active') {
+            document.querySelector('form').submit()
+            }
+        })    
+      </script>
+</body>
+</html>
+      
+

@@ -1,0 +1,36 @@
+day,start_time,end_time,subject,venue,teacher
+Monday,9,10,TOC,203,Jibi
+Monday,10,11,BFE,203,Bhagyashree
+Monday,11,13,MPT,,Revankar
+Monday,13,14,Lunch Break,,
+Monday,14,15,MPT,203,Sawant
+Monday,15,16,VCPDE,203,Seema
+Monday,16,17,,,
+Tuesday,9,10,DC,203,Kshirsagar
+Tuesday,10,11,VCPDE,203,Seema
+Tuesday,11,13,,,
+Tuesday,13,14,Lunch Break,,
+Tuesday,14,15,SA,203,Kokate
+Tuesday,15,16,,,
+Tuesday,16,17,TOC,203,Jibi
+Wednesday,9,10,DSA,203,Pratiksha
+Wednesday,10,11,VCPDE,203,Seema
+Wednesday,11,13,SA,,M tech1
+Wednesday,13,14,Lunch Break,,
+Wednesday,14,15,BFE,203,
+Wednesday,15,16,DC,203,Kshirsagar
+Wednesday,16,17,MPT,203,Sawant
+Thursday,9,10,DC,203,Kshirsagar
+Thursday,10,11,,,
+Thursday,11,13,RPPOOP,,Trishna
+Thursday,13,14,Lunch Break,,
+Thursday,14,15,,,
+Thursday,15,16,TOC,203,Jibi
+Thursday,16,17,BFE,203,Bhagyashree
+Friday,9,10,,,
+Friday,10,11,RPPOOP,203,Trishna
+Friday,11,13,DSA,,Pratiksha
+Friday,13,14,Lunch Break,,
+Friday,14,15,MPT,203,Sawant
+Friday,15,16,TOC,203,Jibi
+Friday,16,17,DSA,203,Pratiksha

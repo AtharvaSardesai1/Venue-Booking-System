@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-image:url("{{ url_for('static', filename='webpage_bg.png') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .form {
+            background-color: #15172b;
+            border-radius: 20px;
+            box-sizing: border-box;
+            height: 200vh;
+            padding: 20px;
+            width: 320px;
+            margin-top: 20vh;
+        }
+
+        .title {
+            color: #eee;
+            font-family: sans-serif;
+            font-size: 36px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        .subtitle {
+            color: #eee;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .input-container {
+            height: 50px;
+            position: relative;
+            width: 100%;
+        }
+
+        .ic1 {
+            margin-top: 40px;
+        }
+
+        .ic2 {
+            margin-top: 30px;
+        }
+
+        .input {
+            background-color: #303245;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            font-size: 18px;
+            height: 100%;
+            outline: 0;
+            padding: 4px 20px 0;
+            width: 100%;
+        }
+
+        .cut {
+            background-color: #15172b;
+            border-radius: 10px;
+            height: 20px;
+            left: 20px;
+            position: absolute;
+            top: -20px;
+            transform: translateY(0);
+            transition: transform 200ms;
+            width: 76px;
+        }
+
+        .cut-short {
+            width: 50px;
+        }
+
+        .input:focus~.cut,
+        .input:not(:placeholder-shown)~.cut {
+            transform: translateY(8px);
+        }
+
+        .placeholder {
+            color: #65657b;
+            font-family: sans-serif;
+            left: 20px;
+            line-height: 14px;
+            pointer-events: none;
+            position: absolute;
+            transform-origin: 0 50%;
+            transition: transform 200ms, color 200ms;
+            top: 20px;
+        }
+
+        .input:focus~.placeholder,
+        .input:not(:placeholder-shown)~.placeholder {
+            transform: translateY(-30px) translateX(10px) scale(0.75);
+        }
+
+        .input:not(:placeholder-shown)~.placeholder {
+            color: #808097;
+        }
+
+        .input:focus~.placeholder {
+            color: #dc2f55;
+        }
+
+        .submit {
+            background-color: #08d;
+            border-radius: 12px;
+            border: 0;
+            box-sizing: border-box;
+            color: #eee;
+            cursor: pointer;
+            font-size: 18px;
+            height: 50px;
+            margin-top: 38px;
+            outline: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .submit:active {
+            background-color: #06b;
+        }
+    </style>
+    <script>
+        // Get the venue caption from the previous page
+        var venueCaption = localStorage.getItem('venuename');
+    
+        // Populate the venue field
+        if (venueCaption) {
+            document.getElementById('venue').value = venueCaption;
+        }
+        console.log('venue assigned')
+    </script>
+    
+
+</head>
+
+<body>
+    <!-- <div id="my-bg" style="height: 230vh; width: 100vw; filter: opacity(0.97); z-index: -99; position: absolute;"></div> -->
+    <!-- start your content from here -->
+    <form id="bookingForm" method="POST" action="/submit_form">
+        <div class="form">
+            <div class="title">Welcome</div>
+            <div class="subtitle">Fill the form to send your venue booking request to the admin.</div>
+            <div class="input-container ic1">
+                <input id="fullname" name="fullname" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="fullname" class="placeholder">Full name</label>
+            </div>
+            <div class="input-container ic1">
+                <input id="email" name="email" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="email" class="placeholder">College Email</label>
+            </div>
+            <div class="input-container ic1">
+                <input id="mobile_num" name="mobile_num" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="mobile_num" class="placeholder">Contact Number</label>
+            </div>
+            <div class="input-container ic1">
+                <input id="venue" name="venue" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="venue" class="placeholder">Venue</label>
+            </div>
+            <div class="input-container ic1">
+                <input id="venue_second" name="venue_second" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="venue_second" class="placeholder">Second preference for venue</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="event_name" name="event_name" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="event_name" class="placeholder">Event Name</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="purpose" name="purpose" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="purpose" class="placeholder">Purpose of use </label>
+            </div>
+            <div class="input-container ic2">
+                <input id="capacity" name="capacity" class="input" type="text" placeholder=" " />
+                <div class="cut"></div>
+                <label for="capacity" class="placeholder">Expected Attendees</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="date" name="date" class="input" type="datetime-local" placeholder="pick a date " value=" "
+                    min="2024-01-07T00:00" max="2024-12-31T00:00" />
+                <!-- <div class="cut cut-short"></div> -->
+                <!-- <label for="date" class="placeholder">Pick a date -->
+
+            </div>
+            <div class="input-container ic2">
+                <input id="time" name="time" class="input" type="text" placeholder=" " />
+                <div class="cut cut-short"></div>
+                <label for="time" class="placeholder">Time duration
+            </div>
+            <button type="submit" class="submit">submit</button>
+        </div>
+    </form>
+
+
+    <!-- end your content till here -->
+    <script src="https://kit.fontawesome.com/6fc46b33e7.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js'></script>
+    <script src="./js/play.js"></script>
+    <script src="./js/highlights.js"></script>
+    <script src="https://kit.fontawesome.com/6fc46b33e7.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+    <script src="three.r134.min.js"></script>
+    <script src="vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+    <script>
+        VANTA.NET({
+            el: "#my-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            points: 15.00,
+            maxDistance: 19.00,
+            color: 0x3fd5ff,
+            spacing: 14.00
+
+        })
+    </script>
+</body>
+
+</html>

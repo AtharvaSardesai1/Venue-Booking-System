@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable</title>
+    <link rel="stylesheet" href="/static/js/css/style.css">
+</head>
+<body>
+    <header class="cd-main-header text-center flex flex-column flex-center">
+        <h1 class="text-xl">Schedule Template</h1>
+    </header>
+
+    <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
+        <div class="cd-schedule__timeline">
+            <ul>
+                <li><span>09:00</span></li>
+                <li><span>09:30</span></li>
+                <li><span>10:00</span></li>
+                <li><span>10:30</span></li>
+                <li><span>11:00</span></li>
+                <li><span>11:30</span></li>
+                <li><span>12:00</span></li>
+                <li><span>12:30</span></li>
+                <li><span>13:00</span></li>
+                <li><span>13:30</span></li>
+                <li><span>14:00</span></li>
+                <li><span>14:30</span></li>
+                <li><span>15:00</span></li>
+                <li><span>15:30</span></li>
+                <li><span>16:00</span></li>
+                <li><span>16:30</span></li>
+                <li><span>17:00</span></li>
+                <li><span>17:30</span></li>
+                <li><span>18:00</span></li>
+            </ul>
+        </div> <!-- .cd-schedule__timeline -->
+
+        {% for day_entry in timetable_data %}
+            {% if day_entry.day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] %}
+                <li class="cd-schedule__group">
+                <div class="cd-schedule__top-info"><span>{{ day_entry.day }}</span></div>
+                <ul>
+                    {% for entry in day_entry.entries %}
+                    <li class="cd-schedule__event">
+                        <a data-start="{{ entry.start }}" data-end="{{ entry.end }}" data-content="{{ entry.content }}" data-event="{{ entry.event }}" href="#0">
+                        <em class="cd-schedule__name">{{ entry.lecture }}</em>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                </li>
+            {% endif %}
+            {% endfor %}
+
+
+        
+
+    <script src="/static/js/util.js"></script> 
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

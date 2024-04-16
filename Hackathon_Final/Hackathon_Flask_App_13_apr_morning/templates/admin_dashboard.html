@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image:url("/Hackathon_Flask_App_13_apr_morning/static/white_bg1.png");
+            background-size: cover;
+
+            /* background: linear-gradient(to bottom, #5d326c, #350048); */
+            /*fiolet*/
+        }
+
+        .btn{
+            font-weight: bolder;
+            border-radius: 10px;
+            border-color: black;
+            text-align: center;
+            background-color: azure;
+        }
+
+        .container {
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 200px;
+            margin-right: 150px;
+        }
+
+        .container .btn {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 200px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .btn a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #5786ff;
+            border-color: black;
+            border-radius: 30px;
+            padding: 10px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            overflow: hidden;
+            color: #171212;
+            font-weight: 400px;
+            z-index: 1;
+            transition: 0.5s;
+            backdrop-filter: blur(15px);
+        }
+
+        .container .btn a:hover {
+            background-color: #2db2ff;
+            color: black;
+            border-width: 2em;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .container .btn:hover::after
+
+        /*lightup button*/
+            {
+            top: 0;
+            height: 50%;
+            width: 80%;
+            border-radius: 30px;
+        }
+
+        .container .btn:nth-child(1)::before,
+        /*chnage 1*/
+        .container .btn:nth-child(1)::after {
+            background: #2db2ff;
+            box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff,
+                0 0 60px #2db2ff;
+        }
+
+        .container .btn:nth-child(2)::before,
+        /* 2*/
+        .container .btn:nth-child(2)::after {
+            background: #2db2ff;
+            box-shadow: 0 0 5px #2db2ff, 0 0 15px #2db2ff, 0 0 30px #2db2ff,
+                0 0 60px #2db2ff;
+        }
+
+        /* nav styles start*/
+        
+        /* nav styles end */
+    </style>
+</head>
+
+<body>
+    <!-- <div id="my-bg" style="height: 100vh; width: 100vw; filter: opacity(0.97); z-index: -99; position: absolute;"></div> -->
+    <!-- start your content from here -->
+
+
+    <div class="container">
+        <div class="btn"><a href="/display_venue_request_admin">APPROVE VENUE BOOKING REQUESTS</a></div>
+        <div class="btn"><a href="/display_timetable_input_form">GENERATE TIMETABLE</a></div>
+    </div>
+
+    <!-- end your content till here -->
+    <script src="https://kit.fontawesome.com/6fc46b33e7.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js'></script>
+    <script src="./js/play.js"></script>
+    <script src="./js/highlights.js"></script>
+    <script src="https://kit.fontawesome.com/6fc46b33e7.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+    <script src="three.r134.min.js"></script>
+    <script src="vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+
+    <script>
+        VANTA.NET({
+            el: "#my-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            points: 15.00,
+            maxDistance: 19.00,
+            color: 0x3fd5ff,
+            spacing: 14.00
+
+        })
+    </script>
+</body>
+
+</html>

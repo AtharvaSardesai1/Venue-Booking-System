@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image:url(/Hackathon_Flask_App_13_apr_morning/static/white_bg1.png); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* colors */
+        :root {
+            --blue: rgba(79, 192, 210, 1);
+            --green: rgba(82, 210, 154, 1);
+            --yellow: rgba(231, 196, 104, 0.7);
+            --orange: rgba(235, 118, 85, 1);
+            --dark-bg: rgba(0, 0, 0, 0.9);
+            --light-bg: rgb(48 43 43 / 78%);
+            --text: rgba(255, 255, 255, 0.9);
+        }
+
+        /* body */
+        /* body {
+            background: var(--dark-bg);
+            font-family: 'Open Sans', sans-serif;
+        } */
+
+        /* links */
+        .nfl a,
+        .mlb a,
+        .nhl a,
+        .pga a {
+            text-decoration: none;
+            transition: color 0.2s ease-out;
+        }
+
+        .nfl a {
+            color: var(--blue);
+        }
+
+        .nfl a:hover {
+            color: darken(var(--blue), 20%);
+        }
+
+        .mlb a {
+            color: var(--green);
+        }
+
+        .mlb a:hover {
+            color: darken(var(--green), 20%);
+        }
+
+        .nhl a {
+            color: var(--yellow);
+        }
+
+        .nhl a:hover {
+            color: darken(var(--yellow), 20%);
+        }
+
+        .pga a {
+            color: var(--orange);
+        }
+
+        .pga a:hover {
+            color: darken(var(--orange), 20%);
+        }
+
+        /* wrapper */
+        .wrapper {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto 100px auto;
+            padding: 0;
+            background: var(--light-bg);
+            color: var(--text);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* lists */
+        .row ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .row ul li {
+            margin: 0;
+            font-size: 16px;
+            font-weight: normal;
+            list-style: none;
+            display: inline-block;
+            width: 20%;
+            box-sizing: border-box;
+        }
+
+        @media only screen and (max-width: 767px) and (min-width: 480px) {
+            .row ul li {
+                font-size: 13px;
+            }
+        }
+
+        @media only screen and (max-width: 479px) {
+            .row ul li {
+                font-size: 13px;
+            }
+        }
+
+        .title ul li {
+            padding: 15px 13px;
+        }
+
+        .row ul li {
+            padding: 5px 10px;
+        }
+
+        /* rows */
+        .row {
+            padding: 20px 0;
+            height: 30px;
+            font-size: 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s ease-out;
+            border-top: 1px solid darken(var(--light-bg), 100%);
+        }
+
+        .row:hover {
+            background-color: lighten(var(--dark-bg), 10%);
+            height: 65px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .row:hover {
+                height: 85px;
+            }
+        }
+
+        @media only screen and (max-width: 359px) {
+            .row:hover {
+                height: 105px;
+            }
+        }
+
+        .title {
+            padding: 25px 0 5px 0;
+            height: 45px;
+            font-size: 0;
+            background-color: var(--light-bg);
+            border-left: 3px solid lighten(var(--light-bg), 100%);
+        }
+
+        .title:hover {
+            height: 45px;
+            background-color: var(--light-bg);
+            border-left: 3px solid lighten(var(--light-bg), 100%);
+        }
+
+        .title-hide {
+            @media only screen and (max-width: 767px) {
+                display: none;
+            }
+        }
+
+        .nfl {
+            border-left: 3px solid darken(var(--blue), 30%);
+        }
+
+        .nfl:hover {
+            border-left: 3px solid var(--blue);
+        }
+
+        .mlb {
+            border-left: 3px solid darken(var(--green), 30%);
+        }
+
+        .mlb:hover {
+            border-left: 3px solid var(--green);
+        }
+
+        .nhl {
+            border-left: 3px solid darken(var(--yellow), 30%);
+        }
+
+        .nhl:hover {
+            border-left: 3px solid var(--yellow);
+        }
+
+        .pga {
+            border-left: 3px solid darken(var(--orange), 30%);
+        }
+
+        .pga:hover {
+            border-left: 3px solid var(--orange);
+        }
+
+        /* row one - fadeIn */
+        .row-fadeIn-wrapper {
+            opacity: 0;
+            font-size: 0;
+            height: 0;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.2s ease-out;
+            animation: fadeIn 0.4s ease-out 2s 1 alternate;
+            animation-fill-mode: forwards;
+        }
+
+        .row-fadeIn-wrapper:hover {
+            height: 35px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .row-fadeIn-wrapper:hover {
+                height: 55px;
+            }
+        }
+
+        @media only screen and (max-width: 359px) {
+            .row-fadeIn-wrapper:hover {
+                height: 75px;
+            }
+        }
+
+        .fadeIn {
+            padding: 20px 0;
+            font-size: 0;
+            position: absolute;
+            transition: all 0.2s ease-out;
+            width: 100%;
+        }
+
+        .fadeIn:hover {
+            background-color: lighten(var(--dark-bg), 10%);
+        }
+
+        /* row two - fadeOut */
+        .row-fadeOut-wrapper {
+            font-size: 0;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.2s ease-out;
+            animation: fadeOut 0.4s ease-out 8s 1 alternate;
+            animation-fill-mode: forwards;
+            opacity: 1;
+            height: 65px;
+        }
+
+        .row-fadeOut-wrapper:hover {
+            height: 100px;
+        }
+
+        /* update content */
+        .update-row {
+            animation: update 0.5s ease-out 12s 1 alternate;
+        }
+
+        .update1 {
+            position: absolute;
+            top: 25px;
+            display: inline-block;
+            opacity: 1;
+            animation: update1 1s ease-out 12s 1 alternate;
+            animation-fill-mode: forwards;
+        }
+
+        .update2 {
+            position: absolute;
+            top: 25px;
+            display: inline-block;
+            opacity: 0;
+            animation: update2 4s ease-out 13s 1 alternate;
+            animation-fill-mode: forwards;
+        }
+
+        /* more content */
+        ul.more-content li {
+            position: relative;
+            top: 22px;
+            font-size: 13px;
+            margin: 0;
+            padding: 10px 13px;
+            display: block;
+            height: 50px;
+            width: 100%;
+            color: darken(var(--text), 50%);
+        }
+
+        @media only screen and (max-width: 767px) {
+            ul.more-content li {
+                font-size: 11px;
+            }
+        }
+
+        /* small content */
+        .small {
+            color: darken(var(--text), 60%);
+            font-size: 10px;
+            padding: 0 10px;
+            margin: 0;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .small {
+                display: none;
+            }
+        }
+
+        /* keyframe animations */
+        @keyframes fadeIn {
+            from {
+                background: var(--light-bg);
+                opacity: 0;
+                padding: 0;
+            }
+
+            to {
+                background: darken(var(--light-bg), 80%);
+                opacity: 1;
+                padding: 0 0 65px 0;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                background: darken(var(--light-bg), 80%);
+                opacity: 1;
+                height: 65px;
+            }
+
+            to {
+                background: var(--light-bg);
+                opacity: 0;
+                height: 0;
+            }
+        }
+
+        @keyframes update {
+            0% {
+                background: darken(var(--light-bg), 80%);
+            }
+
+            50% {
+                background: var(--light-bg);
+            }
+
+            100% {
+                background: darken(var(--light-bg), 80%);
+            }
+        }
+
+        @keyframes update1 {
+            0% {
+                opacity: 0;
+            }
+
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes update2 {
+            0% {
+                opacity: 0;
+                color: var(--text);
+            }
+
+            20% {
+                opacity: 1;
+                color: var(--green);
+            }
+
+            100% {
+                opacity: 1;
+                color: var(--text);
+            }
+        }
+
+        /* approve-button */
+        .btn {
+            color: rgb(44, 225, 34);
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid rgb(44, 225, 34);
+            padding: 10px 20px;
+            font-size: 12px;
+            font-weight: bold;
+            background: transparent;
+            position: relative;
+            transition: all 1s;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            color: white;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 0%;
+            top: 0;
+            left: -40px;
+            transform: skewX(45deg);
+            background-color: rgb(44, 225, 34);
+            z-index: -1;
+            transition: all 1s;
+        }
+
+        .btn:hover::before {
+            width: 160%;
+        }
+
+        /* approve-button */
+    </style>
+</head>
+
+<body>
+    <div id="my-bg" style="height: 200vh; width: 100vw; filter: opacity(0.97); z-index: -99; position: absolute;"></div>
+    <!-- start your content from here -->
+
+    <section class="wrapper">
+        <!-- Row title -->
+        <main class="row title">
+            <ul>
+                <li>Applicant Name</li>
+                <li>Email-ID</li>
+                <li>MIS</li>
+                <li>Venue</li>
+                <li>Approval status</li>
+            </ul>
+        </main>
+        <!-- Row 1 - fadeIn -->
+        <!-- <section class="row-fadeOut-wrapper"> -->
+        {% for index in range(names|length) %}
+        <section>
+            <article class="row nfl">
+                <ul>
+                    <li>{{ names[index] }}</li>
+                    <li>{{ emails[index] }}</li>
+                    <li>{{ event_dates[index] }} {{ event_times[index] }}</li>
+                    <li>{{ venue_selections[index] }}</li>
+                    <!-- <li><a style="color: aqua;" href="/process_venue_booking_request" onclick="approveRequest({ index })">Approve</a></li> -->
+                    <!-- <li><a style="color: aqua;" href="/process_venue_booking_request" onclick="return approveRequest({ index })">Approve</a></li> -->
+                    <li><a style="color: aqua;" onClick="approveRequest({{index}})">Cancel</a></li>
+                </ul>
+                <ul class="more-content">
+                    <li>{{ purposes[index] }}, {{ second_choices[index] }}, {{ event_durations[index] }}</li>
+                </ul>
+            </article>
+        </section>
+        {% endfor %}
+        <script>
+            function approveRequest(index) {
+                // Make an AJAX request to the server
+                // var xhr = new XMLHttpRequest();
+                // xhr.open("POST", "/process_venue_booking_request", true);
+                // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                // xhr.onreadystatechange = function () {
+                //     if (xhr.readyState === 4 && xhr.status === 200) {
+                //         console.log("Approval request processed successfully.");
+                //         // Optionally, you can perform additional actions based on the response from the server
+                //     }
+                // };
+                var formData = "index=" + encodeURIComponent(index);
+                console.log(index);
+                console.log(formData)
+                // xhr.send(formData);
+                alert(formData)
+                window.location.href = "/cancel_venue_booking_request?index="+index;
+                // window.location.href = "/process_venue_booking_request";
+
+
+                // Return false to prevent the default action of the link (following the href attribute)
+                return false;
+            }
+        </script>
+        <!-- Row 2 - fadeOut -->
+        <!-- <section class="row-fadeOut-wrapper"> -->
+        <!-- <section>
+            <article class="row nfl">
+                <ul>
+                    <li>Prajwal Bhosale</li>
+                    <li>$5</li>
+                    <li>45</li>
+                    <li>100</li>
+                    <li><a style="color: aqua;" href="/process_venue_booking_request">Approve</a></li>
+                </ul>
+                <ul class="more-content">
+                    <li>Purpose of use, Date & Time and Duration: </li>
+                </ul>
+            </article>
+        </section> -->
+        <!-- Row 3 -->
+        <!-- <section>
+            <article class="row nfl">
+                <ul>
+                    <li>Prajwal Bhosale</li>
+                    <li>$50</li>
+                    <li>12</li>
+                    <li>48</li>
+                    <li><a style="color: aqua;" href="/process_venue_booking_request">Approve</a></li>
+                </ul>
+                <ul class="more-content">
+                    <li>Purpose of use, Date & Time and Duration: </li>
+                </ul>
+            </article>
+        </section> -->
+        <!-- Row 4 -->
+        <!-- <section>
+            <article class="row nfl">
+                <ul>
+                    <li>Prajwal Bhosale</li>
+                    <li>$50</li>
+                    <li>12</li>
+                    <li>48</li>
+                    <li><a style="color: aqua;" href="/process_venue_booking_request">Approve</a></li>
+                </ul>
+                <ul class="more-content">
+                    <li>Purpose of use, Date & Time and Duration: </li>
+                </ul>
+            </article>
+        </section> -->
+
+
+        <!-- end your content till here -->
+        <script src="https://kit.fontawesome.com/6fc46b33e7.js" crossorigin="anonymous"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js'></script>
+        <script src="./js/play.js"></script>
+        <script src="./js/highlights.js"></script>
+        <script src="https://kit.fontawesome.com/6fc46b33e7.js" crossorigin="anonymous"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+        <script src="three.r134.min.js"></script>
+        <script src="vanta.net.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+</body>
+
+</html>

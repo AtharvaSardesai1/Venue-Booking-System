@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+body {
+  font-family: Lato, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  height: 48px;
+  background-color: #ddd;
+}
+
+ol {
+  list-style: none;
+}
+
+.timetable {
+  display: flex;
+  background: #ecf0f1;
+  color: #444;
+}
+
+.title{
+    color: black;
+}
+
+.nowMarker {
+  position: absolute;
+  border-bottom: 2px solid #ff7f6e;
+  z-index: 100;
+  width: 100%;
+  top: -2px;
+  transition: top 2s ease-in-out;
+}
+
+.timings {
+  margin: 1em 0 0 0;
+  padding: 0 3px 0 0;
+  width: 3em;
+  height: 68em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.week {
+  margin: 0;
+  display: -webkit-flex;
+  display: flex;
+  overflow-x: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.cd-schedule__group{
+    color: black;
+}
+
+.day {
+  position: relative;
+  border-bottom: 1px solid black;
+  color: black;
+  padding: 0;
+  min-width: calc(100.5% / 3);
+  transition: min-width 0.2s ease-in-out;
+}
+
+.name {
+  display: block;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+}
+
+.hour {
+  position: absolute;
+  height: 4em;
+  text-indent: 3px;
+  width: 100%;
+  color: white;
+}
+
+.hour__08 {
+  top: 3em;
+}
+
+.hour__09 {
+  top: 7em;
+  left: 25%;
+}
+
+.hour__10 {
+  top: 11em;
+}
+
+.hour__11 {
+  top: 15em;
+}
+
+.hour__12 {
+  top: 19em;
+}
+
+.hour__13 {
+  top: 23em;
+}
+
+.hour__14 {
+  top: 27em;
+}
+
+.hour__15 {
+  top: 31em;
+}
+
+.hour__16 {
+  top: 35em;
+}
+
+.hour--two {
+  height: 8em;
+}
+
+.hour--three {
+  height: 12em;
+}
+
+.class1 {
+  background: #3498db;
+}
+
+.class2 {
+  background: #27ae60;
+}
+
+.class3 {
+  background: #e74c3c;
+}
+
+.class4 {
+  background: #e67e22;
+}
+
+.class5 {
+  background: #1abc9c;
+}
+
+@media (min-width: 768px) {
+  .timetable {
+    flex-direction: column;
+  }
+  .timings {
+    margin: 0;
+    padding: 0 0 3px 3%;
+    width: 96%;
+    height: 3em;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .name {
+    width: 4%;
+    line-height: 5em;
+    height: 5em;
+  }
+  .week {
+    flex-direction: column;
+  }
+  
+  .hour__09 {
+    top: 7em;
+    left: 23%;
+  }
+  .hour__09 {
+  left: 16%; /* Adjusted to maintain consistent distance */
+}
+
+.hour__10 {
+  top: 11em;
+  left: 32%; /* Adjusted to maintain consistent distance */
+}
+
+.hour__11 {
+  top: 15em;
+  left: 48%; /* Adjusted to maintain consistent distance */
+}
+
+.hour__12 {
+  top: 19em;
+  left: 64%; /* Adjusted to maintain consistent distance */
+}
+
+.hour__13 {
+  top: 23em;
+  left: 80%; /* Adjusted to maintain consistent distance */
+}
+
+.hour__14 {
+  top: 27em;
+  left: 96%; /* Adjusted to maintain consistent distance */
+}
+
+.hour__15 {
+  top: 31em;
+}
+
+.hour__16 {
+  top: 35em;
+}
+
+.hour {
+    top: 0;
+    width: 12%;
+    height: 100%;
+  }
+
+
+footer {
+  position: absolute;
+  width: 100%;
+  height: 48px;
+  background: #aaa;
+}
+    </style>
+</head>
+
+    <body>
+        <!-- Add your site or app content here -->
+        <header>
+      
+        </header>
+      
+        <section class="timetable">
+          <ol class="timings">
+            <li ><time datetime="09:00">0900 </time></li>
+            <li>1000</li>
+            <li>1100</li>
+            <li>1200</li>
+            <li>1300</li>
+            <li>1400</li>
+            <li>1500</li>
+            <li>1600</li>
+            <li>1700</li>
+          </ol>
+          <ol class="week">
+            
+                <li class="cd-schedule__group">
+                    <ul class="week">
+                        <li class="day">
+                            <span class="name">Mon</span>
+                            {% for entry in timetable_data %}
+                                {% if entry.day == 'Monday' %}
+                                    <div class="hour hour__{{ entry.start_time }}">
+                                        <div class="title">{{ entry.subject }}</div>
+                                        <div class="title">{{ entry.venue }}</div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </li>
+            
+          
+            <li class="day">
+                <li class="cd-schedule__group">
+                    <ul class="week">
+                        <li class="day">
+                            <span class="name">Tue</span>
+                            {% for entry in timetable_data %}
+                                {% if entry.day == 'Tuesday' %}
+                                    <div class="hour hour__{{ entry.start_time }}">
+                                        <div class="title">{{ entry.subject }}</div>
+                                        <div class="title">{{ entry.venue }}</div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </li>
+            </li>
+
+            <li class="day">
+                <li class="cd-schedule__group">
+                    <ul class="week">
+                        <li class="day">
+                            <span class="name">Wed</span>
+                            {% for entry in timetable_data %}
+                                {% if entry.day == 'Wednesday' %}
+                                    <div class="hour hour__{{ entry.start_time }}">
+                                        <div class="title">{{ entry.subject }}</div>
+                                        <div class="title">{{ entry.venue }}</div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </li>
+            </li>
+
+            <li class="day"> 
+                <li class="cd-schedule__group">
+                    <ul class="week">
+                        <li class="day">
+                            <span class="name">Thu</span>
+                            {% for entry in timetable_data %}
+                                {% if entry.day == 'Thursday' %}
+                                    <div class="hour hour__{{ entry.start_time }}">
+                                        <div class="title">{{ entry.subject }}</div>
+                                        <div class="title">{{ entry.venue }}</div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </li>
+            </li>
+                     
+            <li class="day">
+                <li class="cd-schedule__group">
+                    <ul class="week">
+                        <li class="day">
+                            <span class="name">Fri</span>
+                            {% for entry in timetable_data %}
+                                {% if entry.day == 'Friday' %}
+                                    <div class="hour hour__{{ entry.start_time }}">
+                                        <div class="title">{{ entry.subject }}</div>
+                                        <div class="title">{{ entry.venue }}</div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </li>
+            </li>
+          </ol>
+        </section>
+      
+        <footer>...</footer>
+      </body>
+
+</html>

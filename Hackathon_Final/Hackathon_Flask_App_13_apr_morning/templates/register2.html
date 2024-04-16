@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image:url("{{ url_for('static', filename='white_bg1.png') }}"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Import Google font - Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .containerr {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 430px;
+            width: 100%;
+            background: #5786ff;
+            border-radius: 7px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .form {
+            background-color: white;
+        }
+
+    
+        #check:checked~.registration {
+            display: block;
+        }
+
+        #check:checked~.login {
+            display: none;
+        }
+
+        #check {
+            display: none;
+        }
+
+        .containerr .form {
+            padding: 2rem;
+        }
+
+        .form header {
+            font-size: 2rem;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form input {
+            height: 60px;
+            width: 100%;
+            padding: 0 15px;
+            font-size: 17px;
+            margin-bottom: 1.3rem;
+            border: 1px solid black;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .form input:focus {
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .form a {
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+        }
+        .bg-info{
+            background-color: #5786ff !important;
+        }
+        .form a:hover {
+            text-decoration: underline;
+        }
+
+        .form input.button {
+            color: #fff;
+            background: #5786ff;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 1.7rem;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .form input.button:hover {
+            background: #003066;
+        }
+
+        .signup {
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .signup label {
+            color: #5786ff;
+            cursor: pointer;
+        }
+
+        .signup label:hover {
+            text-decoration: underline;
+        }
+
+        .navbar {
+            z-index: 999; /* Ensure the navbar stays on top */
+            position: fixed; /* Fix the navbar to the top */
+            width: 100%; /* Make the navbar full width */
+            top: 0; /* Stick the navbar to the top */
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+     <!-- CSRF Token Meta Added -->
+       <!-- Ajax script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid2">
+        <div class="row">
+            <div class="col">
+                <nav style="background-color: #5786ff !important; justify-content: space-between;" class="navbar navbar-expand bg-info navbar-dark navbar-fixed-top ">
+                    <span><a class="navbar-brand" href="#"><img style="height: 100%; width: 20%; position: absolute;left: 0%; top: 0%;" src="{{ url_for('static', filename='navbarlogo.png') }}" alt=""></a></span>                    <a class="navbar-brand" href="#">User Info</a>
+                    <ul class="navbar-nav">
+                        
+                        <!-- <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li> -->
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item"><a class="nav-link" href="{{url_for('admin_register')}}"><span
+                                    class="glyphicon glyphicon-user fontawesome-lock"></span> Sign Up for Admins</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{url_for('admin_login')}}"><span
+                                    class="glyphicon glyphicon-log-in"></span> Login for Admins</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url_for('register')}}"><span
+                                    class="glyphicon glyphicon-user fontawesome-lock"></span> Sign Up for Users</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url_for('login')}}"><span
+                                    class="glyphicon glyphicon-log-in"></span> Login for Users</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url_for('outsider_login')}}"><span
+                            class="glyphicon glyphicon-log-in"></span> Login for Visitors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url_for('outsider_register')}}"><span
+                            class="glyphicon glyphicon-log-in"></span> Sign Up for Visitors</a></li>
+
+                    </ul>
+
+
+                </nav>
+            </div>
+
+    <!-- <div id="my-bg" style="height: 100vh; width: 100vw; filter: opacity(0.97);"></div> -->
+    <!-- add your content from here -->
+    <div class="containerr">
+        <input type="checkbox" id="check">
+        
+        <div class="registration form">
+            <header>Signup</header>
+            <form action="{{ url_for('register') }}" method="POST">
+                <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/>
+                <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox">
+                <input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="textbox">
+                <!-- <input type="password" placeholder="Confirm your password"> -->
+                <input type="submit" class="button" value="Sign up">
+            </form>
+            <div class="signup">
+                <span class="signup">Already have an account?
+                    <label for="check"><a href="{{url_for('login')}}">Login</a></label>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- finish your content till here -->
+    <script src="https://kit.fontawesome.com/6fc46b33e7.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js'></script>
+    <script src="./js/play.js"></script>
+    <script src="./js/highlights.js"></script>
+    <script src="https://kit.fontawesome.com/6fc46b33e7.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+    <script src="three.r134.min.js"></script>
+    <script src="vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+    <script>
+        VANTA.NET({
+            el: "#my-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            points: 15.00,
+            maxDistance: 19.00,
+            color: 0x3fd5ff,
+            spacing: 14.00
+
+        })
+    </script>
+</body>
+
+</html>
